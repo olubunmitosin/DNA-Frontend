@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("../styles/theme.css");
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    /* For rgb(255 255 255 / <alpha-value>) = #ffffff */
+    --gray-0: 255 255 255;
+    /* For rgb(250 250 250 / <alpha-value>) = #fafafa */
+    --gray-50: 250 250 250;
+    /* For rgb(241 241 241 / <alpha-value>) = #f1f1f1 */
+    --gray-100: 241 241 241;
+    /* For rgb(227 227 227 / <alpha-value>) = #e3e3e3 */
+    --gray-200: 227 227 227;
+    /* For rgb(223 223 223 / <alpha-value>) = #dfdfdf */
+    --gray-300: 223 223 223;
+    /* For rgb(146 146 146 / <alpha-value>) = #929292 */
+    --gray-400: 146 146 146;
+    /* For rgb(102 102 102 / <alpha-value>) = #666666 */
+    --gray-500: 102 102 102;
+    /* For rgb(72 72 72 / <alpha-value>) = #484848 */
+    --gray-600: 72 72 72;
+    /* For rgb(51 51 51 / <alpha-value>) = #333333 */
+    --gray-700: 51 51 51;
+    /* For rgb(34 34 34 / <alpha-value>) = #222222 */
+    --gray-800: 34 34 34;
+    /* For rgb(17 17 17 / <alpha-value>) = #111111 */
+    --gray-900: 17 17 17;
+    /* For rgb(0 0 0 / <alpha-value>) = #000000 */
+    --gray-1000: 0 0 0;
+
+    /* For rgb(226.5 19.61 60 / <alpha-value>) = #858EAD */
+    --light-400: 226.5, 19.61%, 60%;
+    /* For rgb(226.5 19.61 60 / <alpha-value>) = #7B8EC8 */
+    --light-500: 225, 41%, 63%;
+    /* For rgb(226.5 19.61 60 / <alpha-value>) = #DCE3F1 */
+    --light-600: 220, 43%, 90%;
+    /* For rgb(226.5 19.61 60 / <alpha-value>) = #FDFDFD */
+    --light-700: 0, 0%, 99.22%;
+    /* For rgb(210, 22%, 96% / <alpha-value>) = #F4F6F8 */
+    --light-800: 210, 22%, 96%;
+    /* For rgb(255 255 255 / <alpha-value>) = #ffffff */
+    --light-900: 0, 0%, 100%;
+
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 196.78 79.73% 29.02%;
+    --chart-9: 286, 63%, 23%, 0.1;
+    /* For rgb(105, 29, 127 / <alpha-value>) = #691d7f */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 196.78 79.73% 29.02%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 272 100% 96%;
+    --accent-foreground: 196.78 79.73% 29.02%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 225, 22%, 11%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 196.78 79.73% 29.02%;
+    --secondary: 221, 22%, 17%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 221, 22%, 17%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 221, 22%, 17%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 221, 22%, 17%;
+    --input: 221, 22%, 17%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background dark:bg-dark-200 text-foreground font-poppins w-full h-full custom-scrollbar;
+  }
+}
+
+@layer utilities {
+  .no-focus {
+    @apply focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
+  }
+  .custom-scrollbar::-webkit-scrollbar {
+    @apply !size-[3px] !max-h-3 rounded-[2px]
+    /* width: 3px;
+    height: 3px;
+    border-radius: 2px; */;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-white dark:bg-dark-400;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-accent dark:bg-dark-400 rounded-[50px];
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+.embla__dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+.embla__dot {
+  -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #f5f5f5;
+  touch-action: manipulation;
+  display: inline-flex;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.embla__dot:after {
+  box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  content: "";
+}
+.embla__dot--selected:after {
+  box-shadow: inset 0 0 0 0.2rem var(--text-body);
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* React Day Picker */
+
+select.rdp-dropdown {
+  @apply dark:bg-dark-300 p-0 w-fit cursor-pointer;
+  /* background: red !important;
+  width: 100px !important;
+   */
+}
+
+.rdp-caption_dropdowns {
+  @apply flex items-center justify-center
+  /* gap: 20px;
+  cursor: pointer; */;
+}
+option {
+  cursor: pointer !important;
+}
+.rdp-caption_dropdowns div:first-child {
+  display: none;
+}
+.rdp-dropdown_month span:first-child {
+  display: none;
+}
+
+.rdp-dropdown_month div:last-child {
+  display: none;
+}
+.rdp-dropdown_year span:first-child {
+  display: none;
+}
+
+.rdp-dropdown_year div:last-child {
+  display: none;
+}
